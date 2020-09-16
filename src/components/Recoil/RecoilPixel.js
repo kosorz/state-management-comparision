@@ -1,17 +1,25 @@
 import React, { forwardRef } from 'react';
-import { useRecoilState } from 'recoil';
-import { pixelStateFamily } from './atoms';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { pixelFamily, pixelsSummary } from './atoms';
 
 const PixelItem = forwardRef(({ id }, ref) => {
-  const [pixel, setPixelState] = useRecoilState(pixelStateFamily(id));
+  const [pixel, setPixelState] = useRecoilState(pixelFamily(id));
+  const setPixelsSummary = useSetRecoilState(pixelsSummary);
 
-  return pixel.visible ? (
+  return (
     <div
       ref={ref}
-      onClick={() => setPixelState({ visible: false })}
-      className="Pixel"
+      onClick={() => {
+        setPixelsSummary((oldPixelSummary) => {
+          return pixel.visible ? oldPixelSummary + 1 : oldPixelSummary - 1;
+        });
+        setPixelState((oldPixel) => {
+          return { visible: !oldPixel.visible };
+        });
+      }}
+      className={`Pixel ${pixel.visible ? 'PixelVisible' : 'PixelInvisible'}`}
     />
-  ) : null;
+  );
 });
 
 export default React.memo(PixelItem);

@@ -1,17 +1,11 @@
-import { atom, atomFamily } from 'recoil';
-import randomObject from '../../util/randomObject';
+import { atomFamily, atom } from 'recoil';
 
-export const countState = atom({
-  key: 'countState',
-  default: 0,
-});
-
-export const nestedObjectState = atom({
-  key: 'nestedObjectState',
-  default: { changes: 0, value: randomObject() },
-});
-
-export const pixelStateFamily = atomFamily({
-  key: 'pixelsStateFamily',
+export const pixelFamily = atomFamily({
+  key: 'pixelFamily',
   default: { visible: true },
+});
+
+export const pixelsSummary = atom({
+  key: 'pixelsSummary',
+  default: 0,
 });

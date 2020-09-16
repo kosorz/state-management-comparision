@@ -1,0 +1,88 @@
+.Pixels {
+  flex-basis: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.Pixels > button {
+  width: 100px;
+  margin: 20px auto;
+}
+
+.PixelsBox {
+  flex: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px;
+  height: fit-content;
+}
+
+.Pixel {
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid black;
+}
+
+.PixelVisible {
+  background-color: red;
+}
+
+.PixelInvisible {
+  background-color: transparent;
+}
+
+.Summary {
+  font-size: 26px;
+  color: red;
+  margin: 20px auto 0;
+}
+
+.Button {
+  width: 190px;
+  height: 50px;
+  position: relative;
+  background: #f3f0f1;
+  margin-bottom: 25px;
+  border-radius: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Button span {
+  line-height: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.Button:active,
+.Button:hover,
+.ButtonActive {
+  opacity: 1;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  color: red;
+}
+
+.Controls {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  flex-basis: 600px;
+  margin-top: 20px;
+}
+
+.SliderAdjust {
+  margin-bottom: 20px;
+}
+
+.rc-slider-track {
+  background: red;
+}
+
+.rc-slider-handle,
+.rc-slider-handle-click-focused {
+  border-color: red !important;
+  box-shadow: red 0, 0, 5px, 0 !important;
+}
