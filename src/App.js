@@ -29,22 +29,22 @@ const App = () => {
   const librarySetups = {
     redux: (
       <Provider store={store}>
-        <Ducks pixelComponent={ReduxDuck} summaryComponent={ReduxSunk} />
+        <Ducks duck={ReduxDuck} sunk={ReduxSunk} />
       </Provider>
     ),
     recoil: (
       <RecoilRoot>
-        <Ducks pixelComponent={RecoilDuck} summaryComponent={RecoilSunk} />
+        <Ducks duck={RecoilDuck} sunk={RecoilSunk} />
       </RecoilRoot>
     ),
     mobx: (
       <MobxProvider>
-        <Ducks pixelComponent={MobxDuck} summaryComponent={MobxSunk} />
+        <Ducks duck={MobxDuck} sunk={MobxSunk} />
       </MobxProvider>
     ),
     context: (
       <ContextProvider>
-        <Ducks pixelComponent={ContextDuck} summaryComponent={ContextSunk} />
+        <Ducks duck={ContextDuck} sunk={ContextSunk} />
       </ContextProvider>
     ),
   };

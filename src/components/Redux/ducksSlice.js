@@ -9,7 +9,7 @@ for (let i = 0; i < 2000; i++) {
 }
 
 export const ducksSlice = createSlice({
-  name: 'pixels',
+  name: 'ducks',
   initialState,
   reducers: {
     toggle: (state, action) => {
@@ -21,6 +21,6 @@ export const ducksSlice = createSlice({
 
 export const { toggle } = ducksSlice.actions;
 
-export const selectSunk = (state) => state.pixels.sunk;
+export const selectSunk = (state) => state.ducks.sunk;
 
 export default ducksSlice.reducer;

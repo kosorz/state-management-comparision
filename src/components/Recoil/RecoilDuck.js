@@ -5,7 +5,7 @@ import Duck from '../Shared/Duck';
 import { duckFamily, ducksSunk } from './atoms';
 
 const RecoilDuck = forwardRef(({ id }, ref) => {
-  const [pixel, setDuckState] = useRecoilState(duckFamily(id));
+  const [duck, setDuckState] = useRecoilState(duckFamily(id));
   const setDucksSummary = useSetRecoilState(ducksSunk);
 
   return (
@@ -13,13 +13,13 @@ const RecoilDuck = forwardRef(({ id }, ref) => {
       ref={ref}
       onClick={() => {
         setDucksSummary((oldDuckSummary) => {
-          return pixel.visible ? oldDuckSummary + 1 : oldDuckSummary - 1;
+          return duck.visible ? oldDuckSummary + 1 : oldDuckSummary - 1;
         });
         setDuckState((oldDuck) => {
           return { visible: !oldDuck.visible };
         });
       }}
-      visible={pixel.visible}
+      visible={duck.visible}
     />
   );
 });

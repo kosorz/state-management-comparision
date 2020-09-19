@@ -6,7 +6,7 @@ import { toggle } from './ducksSlice';
 
 const ReduxDuck = forwardRef((props, ref) => {
   const dispatch = useDispatch();
-  const pixel = useSelector((state) => state.pixels[props.id]);
+  const duck = useSelector((state) => state.ducks[props.id]);
 
   return (
     <Duck
@@ -14,7 +14,7 @@ const ReduxDuck = forwardRef((props, ref) => {
       onClick={() => {
         dispatch(toggle(props.id));
       }}
-      visible={pixel.visible}
+      visible={duck.visible}
     />
   );
 });

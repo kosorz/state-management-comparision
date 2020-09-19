@@ -4,7 +4,7 @@ import 'rc-slider/assets/index.css';
 
 import { useDebounce } from '../../util/useDebounce';
 
-const DucksBox = forwardRef(({ pixels }, ref) => {
+const DucksBox = forwardRef(({ ducks }, ref) => {
   const [elementsCount, setElementsCount] = useState(1000);
   const [ms, setMs] = useState(100);
   const debouncedElementsCount = useDebounce(elementsCount, 2);
@@ -53,7 +53,7 @@ const DucksBox = forwardRef(({ pixels }, ref) => {
         pcs
       </div>
       <hr />
-      <div className="DucksBox">{pixels.slice(0, debouncedElementsCount)}</div>
+      <div className="DucksBox">{ducks.slice(0, debouncedElementsCount)}</div>
       <hr />
     </>
   );

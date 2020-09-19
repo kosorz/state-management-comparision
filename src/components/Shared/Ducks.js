@@ -1,7 +1,7 @@
 import React, { createElement, createRef, useRef } from 'react';
 import DucksBox from './DucksBox';
 
-const Ducks = ({ pixelComponent, summaryComponent }) => {
+const Ducks = ({ duck, sunk }) => {
   const refs = [];
   for (let i = 0; i < 2000; i++) {
     refs.push(createRef());
@@ -9,26 +9,26 @@ const Ducks = ({ pixelComponent, summaryComponent }) => {
   const combinedRef = useRef(refs);
 
   function renderDucks() {
-    const pixels = [];
+    const ducks = [];
 
     for (let i = 0; i < 2000; i++) {
-      pixels.push(
-        createElement(pixelComponent, {
+      ducks.push(
+        createElement(duck, {
           id: i,
-          key: `pixel-${i}`,
+          key: `duck-${i}`,
           ref: refs[i],
         })
       );
     }
 
-    return pixels;
+    return ducks;
   }
 
   return (
     <div className="Ducks">
-      {createElement(summaryComponent)}
+      {createElement(sunk)}
       <hr />
-      <DucksBox ref={combinedRef} pixels={renderDucks()} />
+      <DucksBox ref={combinedRef} ducks={renderDucks()} />
     </div>
   );
 };

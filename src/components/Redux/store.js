@@ -3,6 +3,6 @@ import ducksReducer from './ducksSlice';
 
 export default configureStore({
   reducer: {
-    pixels: ducksReducer,
+    ducks: ducksReducer,
   },
 });
