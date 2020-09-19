@@ -1,6 +1,5 @@
 import React, { createElement, createRef, useRef } from 'react';
 import PixelsBox from './PixelsBox';
-import './Styles.css';
 
 const Pixels = ({ pixelComponent, summaryComponent }) => {
   const refs = [];
@@ -28,6 +27,7 @@ const Pixels = ({ pixelComponent, summaryComponent }) => {
   return (
     <div className="Pixels">
       {createElement(summaryComponent)}
+      <hr />
       <PixelsBox ref={combinedRef} pixels={renderPixels()} />
     </div>
   );

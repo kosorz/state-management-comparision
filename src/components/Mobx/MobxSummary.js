@@ -4,7 +4,12 @@ import { useObserver } from 'mobx-react';
 
 const MobxSummary = () => {
   const store = useContext(MobxContext);
-  return useObserver(() => <div className={'Summary'}>{store.summary}</div>);
+
+  return useObserver(() => (
+    <div className={'Summary'}>
+      <div>{store.summary}</div>
+    </div>
+  ));
 };
 
 export default MobxSummary;

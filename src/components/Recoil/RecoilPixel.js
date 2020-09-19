@@ -1,5 +1,7 @@
 import React, { forwardRef } from 'react';
+import cn from 'classnames';
 import { useRecoilState, useSetRecoilState } from 'recoil';
+
 import { pixelFamily, pixelsSummary } from './atoms';
 
 const PixelItem = forwardRef(({ id }, ref) => {
@@ -17,7 +19,7 @@ const PixelItem = forwardRef(({ id }, ref) => {
           return { visible: !oldPixel.visible };
         });
       }}
-      className={`Pixel ${pixel.visible ? 'PixelVisible' : 'PixelInvisible'}`}
+      className={cn('Pixel', pixel.visible ? 'PixelVisible' : 'PixelInvisible')}
     />
   );
 });

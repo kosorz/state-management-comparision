@@ -4,6 +4,7 @@ import { selectSummary } from './pixelsSlice';
 
 const ReduxSummary = () => {
   const summary = useSelector(selectSummary);
+
   return <div className={'Summary'}>{summary}</div>;
 };
 

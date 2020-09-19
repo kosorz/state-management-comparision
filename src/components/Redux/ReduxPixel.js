@@ -1,5 +1,7 @@
 import React, { forwardRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import cn from 'classnames';
+
 import { toggle } from './pixelsSlice';
 
 const PixelItem = forwardRef((props, ref) => {
@@ -12,7 +14,7 @@ const PixelItem = forwardRef((props, ref) => {
       onClick={() => {
         dispatch(toggle(props.id));
       }}
-      className={`Pixel ${pixel.visible ? 'PixelVisible' : 'PixelInvisible'}`}
+      className={cn('Pixel', pixel.visible ? 'PixelVisible' : 'PixelInvisible')}
     />
   );
 });

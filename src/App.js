@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
+import Title from './components/Shared/Title';
+import Controls from './components/Shared/Controls';
 import Pixels from './components/Shared/Pixels';
-import Button from './components/Shared/Button';
 
 import { RecoilRoot } from 'recoil';
 import RecoilPixel from './components/Recoil/RecoilPixel';
@@ -19,9 +20,9 @@ import MobxSummary from './components/Mobx/MobxSummary';
 import './App.css';
 
 const App = () => {
-  const [currentSetup, setCurrentSetup] = useState('mobx');
+  const [currentLibrary, setCurrentLibrary] = useState('mobx');
 
-  const components = {
+  const librarySetups = {
     redux: (
       <Provider store={store}>
         <Pixels pixelComponent={ReduxPixel} summaryComponent={ReduxSummary} />
@@ -41,24 +42,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="Controls">
-        <Button
-          handleClick={() => setCurrentSetup('redux')}
-          label={'Redux'}
-          active={currentSetup === 'redux'}
-        />
-        <Button
-          handleClick={() => setCurrentSetup('recoil')}
-          label={'Recoil'}
-          active={currentSetup === 'recoil'}
-        />
-        <Button
-          handleClick={() => setCurrentSetup('mobx')}
-          label={'Mobx'}
-          active={currentSetup === 'mobx'}
-        />
-      </div>
-      {components[currentSetup]}
+      <Title
+        currentLibrary={currentLibrary}
+        setCurrentLibrary={setCurrentLibrary}
+      />
+      <Controls
+        currentLibrary={currentLibrary}
+        setCurrentLibrary={setCurrentLibrary}
+      />
+      {librarySetups[currentLibrary]}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { forwardRef, useContext } from 'react';
 import { MobxContext } from './mobx';
 import { useObserver } from 'mobx-react';
+import cn from 'classnames';
 
 const PixelItem = forwardRef(({ id }, ref) => {
   const store = useContext(MobxContext);
@@ -11,9 +12,10 @@ const PixelItem = forwardRef(({ id }, ref) => {
       onClick={() => {
         store.toggle(id);
       }}
-      className={`Pixel ${
+      className={cn(
+        'Pixel',
         store[id].visible ? 'PixelVisible' : 'PixelInvisible'
-      }`}
+      )}
     />
   ));
 });
