@@ -1,5 +1,5 @@
 To start the project run:
-`npm build`
+`npm run build`
 Then serve it:
 `npx serve ./build`
 
