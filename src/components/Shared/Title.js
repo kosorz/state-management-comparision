@@ -4,7 +4,7 @@ import cn from 'classnames';
 const Title = ({ currentLibrary, setCurrentLibrary }) => {
   return (
     <>
-      <h1>
+      <h2>
         <span
           onClick={() => setCurrentLibrary('context')}
           className={cn(currentLibrary === 'context' && 'Decoration', 'Click')}
@@ -29,7 +29,7 @@ const Title = ({ currentLibrary, setCurrentLibrary }) => {
         >
           X
         </span>
-      </h1>
+      </h2>
       <hr />
     </>
   );

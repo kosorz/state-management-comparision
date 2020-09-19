@@ -43,7 +43,7 @@ const DucksBox = forwardRef(({ ducks }, ref) => {
         <span role="img" aria-label="clock">
           🕰️
         </span>
-        Interval: <span className={'Count'}>{ms}</span> ms
+        Interval: <span className={'Decoration'}>{ms}</span> ms
       </div>
       <div>
         <span role="img" aria-label="clock">
