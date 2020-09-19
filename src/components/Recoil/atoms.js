@@ -1,11 +1,11 @@
 import { atomFamily, atom } from 'recoil';
 
-export const pixelFamily = atomFamily({
-  key: 'pixelFamily',
+export const duckFamily = atomFamily({
+  key: 'duckFamily',
   default: { visible: true },
 });
 
-export const pixelsSummary = atom({
-  key: 'pixelsSummary',
+export const ducksSunk = atom({
+  key: 'ducksSunk',
   default: 0,
 });

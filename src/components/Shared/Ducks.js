@@ -1,14 +1,14 @@
 import React, { createElement, createRef, useRef } from 'react';
-import PixelsBox from './PixelsBox';
+import DucksBox from './DucksBox';
 
-const Pixels = ({ pixelComponent, summaryComponent }) => {
+const Ducks = ({ pixelComponent, summaryComponent }) => {
   const refs = [];
   for (let i = 0; i < 2000; i++) {
     refs.push(createRef());
   }
   const combinedRef = useRef(refs);
 
-  function renderPixels() {
+  function renderDucks() {
     const pixels = [];
 
     for (let i = 0; i < 2000; i++) {
@@ -25,12 +25,12 @@ const Pixels = ({ pixelComponent, summaryComponent }) => {
   }
 
   return (
-    <div className="Pixels">
+    <div className="Ducks">
       {createElement(summaryComponent)}
       <hr />
-      <PixelsBox ref={combinedRef} pixels={renderPixels()} />
+      <DucksBox ref={combinedRef} pixels={renderDucks()} />
     </div>
   );
 };
 
-export default Pixels;
+export default Ducks;

@@ -5,14 +5,14 @@ export const MobxContext = createContext();
 
 const MobxProvider = ({ children }) => {
   const storeSkeleton = {
-    summary: 0,
+    sunk: 0,
     toggle: (id) => {
-      store.summary += store[id].visible ? 1 : -1;
+      store.sunk += store[id].visible ? 1 : -1;
       store[id].visible = !store[id].visible;
     },
   };
 
-  for (let i = 0; i < 5000; i++) {
+  for (let i = 0; i < 2000; i++) {
     storeSkeleton[i] = { visible: true };
   }
 

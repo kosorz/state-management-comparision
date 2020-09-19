@@ -4,7 +4,7 @@ import 'rc-slider/assets/index.css';
 
 import { useDebounce } from '../../util/useDebounce';
 
-const PixelsBox = forwardRef(({ pixels }, ref) => {
+const DucksBox = forwardRef(({ pixels }, ref) => {
   const [elementsCount, setElementsCount] = useState(1000);
   const [ms, setMs] = useState(100);
   const debouncedElementsCount = useDebounce(elementsCount, 2);
@@ -23,7 +23,6 @@ const PixelsBox = forwardRef(({ pixels }, ref) => {
         }
 
         setTimeout(toggleBox, (debouncedElementsCount - i) * ms);
-        // setTimeout(toggleBox, debouncedElementsCount * ms + i);
       }
     }
 
@@ -54,10 +53,10 @@ const PixelsBox = forwardRef(({ pixels }, ref) => {
         pcs
       </div>
       <hr />
-      <div className="PixelsBox">{pixels.slice(0, debouncedElementsCount)}</div>
+      <div className="DucksBox">{pixels.slice(0, debouncedElementsCount)}</div>
       <hr />
     </>
   );
 });
 
-export default PixelsBox;
+export default DucksBox;

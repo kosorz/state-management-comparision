@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import pixelsReducer from './pixelsSlice';
+import ducksReducer from './ducksSlice';
 
 export default configureStore({
   reducer: {
-    pixels: pixelsReducer,
+    pixels: ducksReducer,
   },
 });

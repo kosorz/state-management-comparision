@@ -5,7 +5,7 @@
   margin: auto;
 }
 
-.Pixels {
+.Ducks {
   flex-basis: 600px;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@
   margin: auto;
 }
 
-.PixelsBox {
+.DucksBox {
   flex: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -21,25 +21,32 @@
   height: fit-content;
 }
 
-.Pixel {
+.Duck {
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.PixelVisible {
-  background-image: url('./components/Shared/duck.png');
+.DuckVisible {
+  background-image: url("./assets/duck.png");
 }
 
-.PixelInvisible {
-  background-image: url('./components/Shared/water.png');
+.DuckInvisible {
+  background-image: url("./assets/water.png");
 }
 
-.Summary {
+.DuckDecoration {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.Sunk {
   font-size: 26px;
+  display: flex;
   color: red;
   margin: auto;
+  align-items: center;
 }
 
 .Description > span {
@@ -62,7 +69,7 @@
 
 pre,
 code {
-  font-family: Menlo, Monaco, 'Courier New', monospace;
+  font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
 pre {
@@ -87,16 +94,16 @@ pre {
   }
 
   a[href]:after {
-    content: ' (' attr(href) ')';
+    content: " (" attr(href) ")";
   }
 
   abbr[title]:after {
-    content: ' (' attr(title) ')';
+    content: " (" attr(title) ")";
   }
 
-  a[href^='#']:after,
-  a[href^='javascript:']:after {
-    content: '';
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
   }
 
   pre,
@@ -231,7 +238,7 @@ html {
 
 body {
   color: #fafafa;
-  font-family: 'Courier New';
+  font-family: "Courier New";
   line-height: 1.45;
   margin: 3rem auto 1rem;
   max-width: 48rem;

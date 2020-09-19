@@ -5,6 +5,11 @@ const Controls = ({ currentLibrary, setCurrentLibrary }) => {
   return (
     <div className="Controls">
       <Button
+        handleClick={() => setCurrentLibrary('context')}
+        label={'Context'}
+        active={currentLibrary === 'context'}
+      />
+      <Button
         handleClick={() => setCurrentLibrary('redux')}
         label={'Redux'}
         active={currentLibrary === 'redux'}

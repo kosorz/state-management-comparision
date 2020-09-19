@@ -6,6 +6,12 @@ const Title = ({ currentLibrary, setCurrentLibrary }) => {
     <>
       <h1>
         <span
+          onClick={() => setCurrentLibrary('context')}
+          className={cn(currentLibrary === 'context' && 'Decoration', 'Click')}
+        >
+          CON
+        </span>
+        <span
           onClick={() => setCurrentLibrary('redux')}
           className={cn(currentLibrary === 'redux' && 'Decoration', 'Click')}
         >
